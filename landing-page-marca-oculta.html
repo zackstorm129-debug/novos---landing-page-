@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Marca Oculta en Tu Mano — El Mapa Que Siempre Llevaste Contigo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-parchment: #F5F0E6;
+            --text-brown: #2C1810;
+            --accent-purple: #2E1A47;
+            --accent-purple-hover: #1E0F30;
+            --dark-bg: #1A0F0A;
+            --gold: #D4AF37;
+            --gold-light: #E8C96A;
+            --border-light: rgba(44, 24, 16, 0.15);
+            --border-dark: rgba(212, 175, 55, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-parchment);
+            color: var(--text-brown);
+            line-height: 1.7;
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .font-sans {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Labels */
+        .label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .label-gold {
+            color: var(--gold);
+            opacity: 0.7;
+        }
+
+        /* Roman numerals */
+        .roman {
+            font-family: 'Playfair Display', serif;
+            font-size: 72px;
+            font-weight: 400;
+            color: var(--accent-purple);
+            line-height: 1;
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+
+        /* Headlines */
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            line-height: 1.15;
+            color: var(--text-brown);
+        }
+
+        h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: clamp(28px, 4vw, 44px);
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: clamp(20px, 3vw, 28px);
+            margin-bottom: 16px;
+        }
+
+        /* Drop cap */
+        .drop-cap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5em;
+            float: left;
+            line-height: 0.8;
+            padding-right: 12px;
+            padding-top: 8px;
+            color: var(--accent-purple);
+            font-weight: 500;
+        }
+
+        /* Body text */
+        p {
+            font-size: 16px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+            color: var(--text-brown);
+            opacity: 0.85;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-purple);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-purple-hover);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-brown);
+            border: 1px solid var(--text-brown);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--text-brown);
+            color: var(--bg-parchment);
+        }
+
+        .btn-large {
+            padding: 18px 40px;
+            font-size: 12px;
+        }
+
+        /* Divider */
+        .divider {
+            height: 1px;
+            background-color: var(--border-light);
+            margin: 0;
+            border: none;
+        }
+
+        .divider-dark {
+            background-color: var(--border-dark);
+        }
+
+        /* Proof badges */
+        .proof-badges {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .proof-badge {
+            flex: 1;
+            text-align: center;
+            padding: 0 16px;
+            border-right: 1px solid var(--border-light);
+        }
+
+        .proof-badge:last-child {
+            border-right: none;
+        }
+
+        .proof-badge .number {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--accent-purple);
+            display: block;
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .proof-badge .text {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-brown);
+            opacity: 0.6;
+        }
+
+        /* Quote card */
+        .quote-card {
+            background: white;
+            padding: 20px 24px;
+            border-left: 3px solid var(--accent-purple);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            position: relative;
+        }
+
+        .quote-card p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            color: var(--text-brown);
+        }
+
+        .quote-card .attribution {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-brown);
+            opacity: 0.5;
+        }
+
+        /* Image placeholder */
+        .img-placeholder {
+            background: linear-gradient(135deg, #E8E0D4 0%, #D4C8B8 100%);
+            border: 2px dashed var(--border-light);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-brown);
+            opacity: 0.4;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .img-placeholder .camera-icon {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        .img-placeholder .placeholder-text {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* Dark section */
+        .section-dark {
+            background-color: var(--dark-bg);
+            color: var(--gold);
+        }
+
+        .section-dark h2,
+        .section-dark h3 {
+            color: var(--gold);
+        }
+
+        .section-dark p {
+            color: var(--gold-light);
+            opacity: 0.8;
+        }
+
+        /* Comparison table */
+        .comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .comparison-header {
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-dark);
+        }
+
+        .comparison-header h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--gold);
+            margin-bottom: 4px;
+        }
+
+        .comparison-header span {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        .comparison-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 14px 0;
+            border-bottom: 1px dotted var(--border-dark);
+        }
+
+        .comparison-row .item-text {
+            font-size: 14px;
+            color: var(--gold-light);
+            opacity: 0.85;
+            padding-right: 16px;
+            flex: 1;
+        }
+
+        .comparison-row .item-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--gold);
+            white-space: nowrap;
+        }
+
+        .comparison-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            margin-top: 8px;
+        }
+
+        .comparison-total .total-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            opacity: 0.6;
+        }
+
+        .comparison-total .total-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 500;
+            color: var(--gold);
+        }
+
+        /* Content modules grid */
+        .modules-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .module {
+            border: 1px solid var(--border-light);
+            padding: 28px;
+            background: rgba(255,255,255,0.4);
+        }
+
+        .module-header {
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .module-header .module-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            margin-bottom: 6px;
+            display: block;
+        }
+
+        .module-header .module-desc {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--text-brown);
+            opacity: 0.7;
+        }
+
+        .module-list {
+            list-style: none;
+        }
+
+        .module-list li {
+            font-size: 13px;
+            padding: 8px 0;
+            border-bottom: 1px dotted var(--border-light);
+            color: var(--text-brown);
+            opacity: 0.8;
+        }
+
+        .module-list li:last-child {
+            border-bottom: none;
+        }
+
+        .module-list .num {
+            font-family: 'Playfair Display', serif;
+            font-weight: 500;
+            color: var(--accent-purple);
+            margin-right: 8px;
+        }
+
+        /* Testimonial cards */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            border: 1px solid var(--border-light);
+            padding: 28px;
+            background: rgba(255,255,255,0.5);
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: var(--accent-purple);
+            opacity: 0.3;
+            line-height: 1;
+            position: absolute;
+            top: 12px;
+            left: 20px;
+        }
+
+        .stars {
+            margin-bottom: 16px;
+            font-size: 14px;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .testimonial-card blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-brown);
+            margin-bottom: 16px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-card .author {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-brown);
+            opacity: 0.5;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        /* Highlight box */
+        .highlight-box {
+            border-left: 3px solid var(--accent-purple);
+            padding: 20px 24px;
+            margin: 24px 0;
+            background: rgba(46, 26, 71, 0.04);
+        }
+
+        .highlight-box p {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--text-brown);
+            margin: 0;
+        }
+
+        /* Price display */
+        .price-display {
+            margin: 24px 0;
+        }
+
+        .price-main {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 500;
+            color: var(--accent-purple);
+            line-height: 1;
+        }
+
+        .price-original {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            color: var(--text-brown);
+            opacity: 0.4;
+            text-decoration: line-through;
+            margin-left: 12px;
+        }
+
+        .price-label {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--text-brown);
+            opacity: 0.5;
+            margin-top: 8px;
+            display: block;
+        }
+
+        /* Value stack */
+        .value-stack {
+            margin: 28px 0;
+        }
+
+        .value-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px dotted var(--border-light);
+        }
+
+        .value-item .value-name {
+            font-size: 14px;
+            color: var(--text-brown);
+        }
+
+        .value-item .value-name strong {
+            font-weight: 600;
+        }
+
+        .value-item .value-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 14px;
+            color: var(--text-brown);
+            opacity: 0.6;
+            white-space: nowrap;
+            margin-left: 16px;
+        }
+
+        .value-total {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            border-top: 2px solid var(--text-brown);
+            margin-top: 8px;
+        }
+
+        .value-total .total-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-brown);
+        }
+
+        .value-total .total-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            color: var(--text-brown);
+        }
+
+        .value-you-pay {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            background: rgba(46, 26, 71, 0.06);
+            padding: 16px 20px;
+            margin-top: 4px;
+        }
+
+        .value-you-pay .you-pay-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent-purple);
+        }
+
+        .value-you-pay .you-pay-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--accent-purple);
+        }
+
+        /* FAQ */
+        .faq-item {
+            border-bottom: 1px solid var(--border-light);
+            padding: 24px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: var(--text-brown);
+            margin-bottom: 12px;
+        }
+
+        .faq-answer {
+            font-size: 15px;
+            color: var(--text-brown);
+            opacity: 0.75;
+            line-height: 1.7;
+        }
+
+        /* Footer CTA */
+        .footer-cta {
+            text-align: center;
+            padding: 80px 24px;
+        }
+
+        .footer-cta h2 {
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+
+        .footer-cta p {
+            color: var(--gold-light);
+            opacity: 0.7;
+            max-width: 600px;
+            margin: 0 auto 32px;
+        }
+
+        /* Trust badges */
+        .trust-badges {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--text-brown);
+            opacity: 0.4;
+            text-align: center;
+            margin-top: 16px;
+        }
+
+        .section-dark .trust-badges {
+            color: var(--gold);
+            opacity: 0.5;
+        }
+
+        /* Link style */
+        .link-arrow {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-purple);
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-purple);
+            padding-bottom: 2px;
+            transition: opacity 0.3s;
+        }
+
+        .link-arrow:hover {
+            opacity: 0.7;
+        }
+
+        /* Section padding */
+        section {
+            padding: 80px 0;
+        }
+
+        /* Two column layouts */
+        .two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .two-col-55-45 {
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .two-col-45-55 {
+            grid-template-columns: 1fr 1.2fr;
+        }
+
+        .two-col-40-60 {
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        /* Image styling */
+        .img-framed {
+            border: 1px solid var(--border-light);
+            padding: 8px;
+            background: white;
+        }
+
+        .img-shadow {
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .img-cover {
+            width: 100%;
+            max-width: 320px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .two-col,
+            .comparison,
+            .modules-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .proof-badges {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .proof-badge {
+                border-right: none;
+                border-bottom: 1px solid var(--border-light);
+                padding-bottom: 16px;
+            }
+
+            .proof-badge:last-child {
+                border-bottom: none;
+                padding-bottom: 0;
+            }
+
+            .roman {
+                font-size: 48px;
+            }
+
+            section {
+                padding: 56px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION I — HERO -->
+    <section id="hero">
+        <div class="container">
+            <div class="two-col two-col-55-45">
+                <div>
+                    <span class="label">Para quienes nunca encajaron</span>
+                    <h1 class="drop-cap">No eres "demasiado sensible". No eres "raro". No estás loco.</h1>
+                    <p>Siempre sentiste que había algo más grande que tú, algo que no encajaba en las explicaciones comunes. Las personas te llamaron "dramático", "soñador", "vive en su mundo". Te excluyeron de grupos. Te miraron raro. Y tú, en silencio, te preguntaste: "¿Qué me pasa?"</p>
+                    <p>Hoy descubrirás que no te pasa nada malo. Te pasa algo extraordinario. La letra "M" en tu palma — o esa luna creciente que nadie te enseñó a leer — no es una casualidad. Es la prueba de que tu alma no es humana común. Es la firma de un origen espiritual superior, de una misión que espera ser cumplida, de una conexión con vidas que ni siquiera recuerdas... pero que tu mano nunca olvidó.</p>
+                    <div style="margin-top: 32px;">
+                        <a href="#order" class="btn btn-primary">Descubrir mi origen →</a>
+                        <a href="#truth" class="btn btn-secondary" style="margin-left: 12px;">Leer la verdad →</a>
+                    </div>
+                    <div class="proof-badges">
+                        <div class="proof-badge">
+                            <span class="number">5.330+</span>
+                            <span class="text">Almas encontradas</span>
+                        </div>
+                        <div class="proof-badge">
+                            <span class="number">1M+</span>
+                            <span class="text">De visualizaciones</span>
+                        </div>
+                        <div class="proof-badge">
+                            <span class="number">7 Días</span>
+                            <span class="text">Garantía</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="position: relative;">
+                    <div class="img-framed">
+                        <img src="author-avatar.jpg" alt="El Guía" style="width: 100%; display: block;" onerror="this.style.display='none'; this.parentElement.style.minHeight='500px'; this.parentElement.classList.add('img-placeholder');">
+                    </div>
+                    <div class="quote-card" style="position: absolute; bottom: -20px; left: -20px; right: 20px; max-width: 300px;">
+                        <p>No para convertirte en un gurú. Para que entiendas, por fin, quién eres realmente.</p>
+                        <span class="attribution">— El Guía · Canal Secretos del Más Allá</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECTION II — LA VERDAD -->
+    <section id="truth" class="section-dark">
+        <div class="container">
+            <div style="margin-bottom: 48px;">
+                <span class="label label-gold">II. Lo que sientes vs. lo que es</span>
+                <h2>La vida que llevas. Y la vida que deberías estar viviendo.</h2>
+            </div>
+            <div class="comparison">
+                <div>
+                    <div class="comparison-header">
+                        <h4>Quienes llevan la marca</h4>
+                        <span>Sin saber qué significa</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Sientes que eres diferente desde niño, pero nadie te explicó por qué</span>
+                        <span class="item-value">$2,400</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Las personas no te entienden del todo... y tú dejas de intentar ser comprendido</span>
+                        <span class="item-value">$780</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Buscas respuestas en la religión, en la ciencia, en el tarot, en todo... y el vacío sigue</span>
+                        <span class="item-value">$540</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Sientes que hay algo más grande esperando, pero no sabes cómo encontrarlo</span>
+                        <span class="item-value">$260</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Te cuesta encajar en el mundo común: fiestas, chismes, telebasura... todo te parece vacío</span>
+                        <span class="item-value">$1,800</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Una soledad que no es falta de compañía. Es falta de conexión verdadera</span>
+                        <span class="item-value">$380</span>
+                    </div>
+                    <div class="comparison-total">
+                        <span class="total-label">Vida sin respuestas</span>
+                        <span class="total-value">$6,160</span>
+                    </div>
+                </div>
+                <div>
+                    <div class="comparison-header">
+                        <h4>La misma persona</h4>
+                        <span>Después de leer este libro</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Entiendes que tu "diferencia" no es un defecto. Es un diseño espiritual</span>
+                        <span class="item-value">$980</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Descubres tu misión específica en la Tierra: por qué naciste en este momento</span>
+                        <span class="item-value">$420</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Encuentras paz al saber que tu alma ha vivido antes y que nada fue en vano</span>
+                        <span class="item-value">$260</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Conectas con otros "elegidos" que entienden tu lenguaje sin explicaciones</span>
+                        <span class="item-value">$40</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Dejas de sentirte invisible: tu marca es la prueba de que eres especial</span>
+                        <span class="item-value">$300</span>
+                    </div>
+                    <div class="comparison-row">
+                        <span class="item-text">Duermes tranquilo. Por fin hay un sentido para todo lo que sufriste</span>
+                        <span class="item-value">$25</span>
+                    </div>
+                    <div class="comparison-total">
+                        <span class="total-label">Vida con propósito</span>
+                        <span class="total-value">~$2,025</span>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 48px;">
+                <p style="font-family: 'Playfair Display', serif; font-size: 20px; color: var(--accent-purple); font-style: italic;">Transformación que no tiene precio: de la confusión a la certeza.</p>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECTION III — QUÉ ENCUENTRAS DENTRO -->
+    <section id="inside">
+        <div class="container">
+            <div style="margin-bottom: 48px;">
+                <span class="label">III. El mapa que buscaste toda tu vida</span>
+                <h2>Exactamente lo que recibes por $27.</h2>
+                <p>15 capítulos numerados a través de 6 secciones. Cada uno escrito para quienes, como tú, necesitan respuestas directas sin rodeos. Sin lenguaje de gurú. Sin promesas vacías. Solo la verdad, documentada, paso a paso. Elige los capítulos que resuenen contigo — no necesitas leerlos todos para que tu vida cambie.</p>
+            </div>
+            <div class="modules-grid">
+                <div class="module">
+                    <div class="module-header">
+                        <span class="module-label">Origen — 3 capítulos</span>
+                        <p class="module-desc">Por fin, la respuesta a "¿por qué soy así?"</p>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="num">01.</span> La letra M: mucho más que una línea en la piel</li>
+                        <li><span class="num">02.</span> La luna creciente: el sello que los antiguos llamaban "marca de los elegidos"</li>
+                        <li><span class="num">03.</span> Cuando ambas marcas aparecen juntas: lo que pocos saben</li>
+                    </ul>
+                </div>
+                <div class="module">
+                    <div class="module-header">
+                        <span class="module-label">Vidas pasadas — 3 capítulos</span>
+                        <p class="module-desc">Lo que tu mano recuerda y tu mente olvidó</p>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="num">01.</span> La memoria celular de otras encarnaciones</li>
+                        <li><span class="num">02.</span> El trauma que no es tuyo... pero que sientes como si lo fuera</li>
+                        <li><span class="num">03.</span> Por qué esta podría ser tu última vida — y qué significa eso</li>
+                    </ul>
+                </div>
+                <div class="module">
+                    <div class="module-header">
+                        <span class="module-label">Misión — 3 capítulos</span>
+                        <p class="module-desc">Dejas de existir. Empiezas a cumplir.</p>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="num">01.</span> Los elegidos no nacen por accidente: por qué estás aquí ahora</li>
+                        <li><span class="num">02.</span> Tu don oculto que el mundo no entiende... y cómo usarlo sin miedo</li>
+                        <li><span class="num">03.</span> Cómo activar tu propósito antes de que sea demasiado tarde</li>
+                    </ul>
+                </div>
+                <div class="module">
+                    <div class="module-header">
+                        <span class="module-label">Textos ocultos — 3 capítulos</span>
+                        <p class="module-desc">Lo que censuraron para que no supieras quién eres</p>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="num">01.</span> La Biblia Etíope y los Vigilantes Caídos: la conexión que nadie te contó</li>
+                        <li><span class="num">02.</span> Carl Jung: lo que realmente investigó sobre las marcas (y por qué lo ocultaron)</li>
+                        <li><span class="num">03.</span> El Libro de Enoc: los portadores del M y su verdadera naturaleza</li>
+                    </ul>
+                </div>
+                <div class="module">
+                    <div class="module-header">
+                        <span class="module-label">Soledad — 2 capítulos</span>
+                        <p class="module-desc">No estás solo. Solo no has encontrado a los tuyos.</p>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="num">01.</span> Por qué quienes tienen la M son "invisibles" para el mundo común</li>
+                        <li><span class="num">02.</span> Dónde encontrar a otros elegidos que hablen tu lenguaje del alma</li>
+                    </ul>
+                </div>
+                <div class="module">
+                    <div class="module-header">
+                        <span class="module-label">Muerte y más allá — 2 capítulos</span>
+                        <p class="module-desc">Tu final no será como el de los demás.</p>
+                    </div>
+                    <ul class="module-list">
+                        <li><span class="num">01.</span> Si la M y la luna están juntas: lo que realmente sucede cuando mueres</li>
+                        <li><span class="num">02.</span> Por qué los portadores de la marca no temen a la muerte... la esperan</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECTION IV — TESTIMONIOS -->
+    <section id="testimonials">
+        <div class="container">
+            <div style="margin-bottom: 48px;">
+                <span class="label">IV. Almas que dejaron de sentirse perdidas</span>
+                <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; opacity: 0.7;">Tres personas. Tres vidas diferentes. Una misma revelación que lo cambió todo.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>Siempre supe que era diferente, pero pensaba que era un defecto. Mi familia me decía "dramática". Mis amigos me dejaron de invitar. Cuando leí sobre la letra M y su conexión con los textos antiguos, todo encajó. Por primera vez en 34 años, entiendo por qué nunca encajé. No es un defecto. Es un diseño. Soy una alma antigua con una misión. Y ahora, por fin, sé cuál es.</blockquote>
+                    <div class="author">— María L., Buenos Aires</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>Tenía la M y la luna juntas en la mano derecha. Nadie me había dicho qué significaba. Pasé años buscando en iglesias, en terapeutas, en libros de autoayuda... y el vacío seguía. Este libro me mostró que no estoy loco por sentir que no pertenezco a este mundo. Hay un propósito. Hay una razón. Y hay otros como yo. Ya no me siento solo.</blockquote>
+                    <div class="author">— Carlos S., México</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>Entré escéptico. Pensaba que era solo quiromancia barata para vender esperanzas. Pero cuando conectaron la marca con el Libro de Enoc, con los estudios de Jung, con textos que ni siquiera sabía que existían... sentí un escalofrío que no puedo explicar. Esto no es magia. Es conocimiento que se ocultó. Y ahora lo tengo. Mi vida no volverá a ser la misma.</blockquote>
+                    <div class="author">— Thomas G., Madrid</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECTION V — SOBRE EL AUTOR -->
+    <section id="author">
+        <div class="container">
+            <div class="two-col two-col-40-60">
+                <div>
+                    <div class="img-framed">
+                        <img src="author-portrait.jpg" alt="El Guía" style="width: 100%; display: block;" onerror="this.style.display='none'; this.parentElement.style.minHeight='450px'; this.parentElement.classList.add('img-placeholder');">
+                    </div>
+                </div>
+                <div>
+                    <span class="label">V. Sobre el guía</span>
+                    <h2>Yo también fui "el raro". Hasta que encontré la M en mi mano.</h2>
+                    <p>Crecí sintiendo que había algo más grande que yo, algo que no encajaba en las explicaciones que me daban. Durante años busqué respuestas en libros, en meditación, en viajes, en terapeutas que me miraban con lástima. Fue cuando descubrí lo que Carl Jung realmente investigó sobre las marcas en las manos — y lo que la Biblia Etíope, el Libro de Enoc y los antiguos místicos guardaron en secreto — que todo cambió.</p>
+                    <p>No soy un gurú con título. No soy un místico con túnica. Soy alguien que, como tú, pasó décadas sintiéndose invisible, incomprendido, solo en medio de multitudes. Alguien que encontró un mapa oculto en el lugar más inesperado: la palma de mi propia mano. Y que ahora quiere compartir ese mapa contigo.</p>
+                    <p>He pasado los últimos años recopilando textos olvidados, estudios censurados y tradiciones orales que hablan de los portadores de la M. No para fundar una religión. No para crear una secta. Sino para darte lo que a mí nadie me dio: una respuesta. Una explicación. Una paz.</p>
+                    <div class="highlight-box">
+                        <p>No es un manual para convertirte en místico. Es un manual para que, por fin, entiendas quién eres realmente.</p>
+                    </div>
+                    <a href="#" class="link-arrow">Ver el canal →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECTION VI — ORDENAR -->
+    <section id="order">
+        <div class="container">
+            <div class="two-col two-col-45-55">
+                <div style="text-align: center;">
+                    <div class="img-shadow" style="display: inline-block;">
+                        <img src="ebook-cover.png" alt="La Marca Oculta en Tu Mano" class="img-cover" onerror="this.style.display='none'; this.parentElement.style.width='300px'; this.parentElement.style.height='400px'; this.parentElement.classList.add('img-placeholder');">
+                    </div>
+                </div>
+                <div>
+                    <span class="label">VI. Ordenar</span>
+                    <span class="label" style="color: var(--text-brown); opacity: 0.5; display: block; margin-bottom: 8px;">Ebook ilustrado · 200+ páginas · Primera edición</span>
+                    <h2 style="font-size: 28px;">La Marca Oculta en Tu Mano: Lo Que Revela Sobre Tu Origen Espiritual</h2>
+                    <p>15 capítulos a través de 6 secciones sobre origen, vidas pasadas, misión, textos antiguos y la verdad sobre tu soledad — con guías paso a paso, referencias documentadas y la honestidad de alguien que, como tú, buscó respuestas durante años. Elige los capítulos que resuenen contigo. Omite los que no. Pero lee el primero. Ese cambiará todo.</p>
+
+                    <div class="price-display">
+                        <span class="price-main">$27</span>
+                        <span class="price-original">$77</span>
+                        <span class="price-label">Precio de lanzamiento — solo este fin de semana</span>
+                    </div>
+
+                    <div class="value-stack">
+                        <div class="value-item">
+                            <span class="value-name"><strong>La Marca Oculta en Tu Mano</strong> — ebook ilustrado de 200+ páginas, el mapa completo</span>
+                            <span class="value-price">$27</span>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-name"><strong>El Diario del Despertar</strong> — cuaderno imprimible para registrar visiones, sueños y revelaciones</span>
+                            <span class="value-price">$19</span>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-name"><strong>La Guía de los Elegidos</strong> — dónde encontrar a otros portadores de la M</span>
+                            <span class="value-price">$19</span>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-name"><strong>Los Textos Prohibidos</strong> — acceso a las fuentes originales mencionadas (sin paywalls)</span>
+                            <span class="value-price">$14</span>
+                        </div>
+                        <div class="value-item">
+                            <span class="value-name"><strong>Actualizaciones de por vida</strong> — cada nueva revelación, cada nueva edición, sin costo</span>
+                            <span class="value-price">$21</span>
+                        </div>
+                        <div class="value-total">
+                            <span class="total-label">Valor total</span>
+                            <span class="total-price">$100</span>
+                        </div>
+                        <div class="value-you-pay">
+                            <span class="you-pay-label">Tú pagas hoy</span>
+                            <span class="you-pay-price">$27</span>
+                        </div>
+                    </div>
+
+                    <a href="#" class="btn btn-primary btn-large" style="display: block; text-align: center; margin-top: 24px;">Obtener mi mapa · $27 →</a>
+                    <p style="font-size: 11px; text-align: center; margin-top: 12px; opacity: 0.5; letter-spacing: 1px; text-transform: uppercase;">Acceso instantáneo · Pago único · Tuyo para siempre</p>
+                    <div class="trust-badges">🔒 Checkout seguro · Visa · Mastercard · PayPal · Apple Pay · Reembolso 7 días</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- SECTION VII — FAQ -->
+    <section id="faq">
+        <div class="container">
+            <div style="margin-bottom: 48px;">
+                <span class="label">VII. Preguntas que haces antes de dar el paso</span>
+                <p style="font-family: 'Playfair Display', serif; font-style: italic; font-size: 18px; opacity: 0.7;">Lo que otros "elegidos" preguntaron antes de descubrir su verdad.</p>
+            </div>
+            <div>
+                <div class="faq-item">
+                    <h4 class="faq-question">¿Esto es una religión? ¿Tengo que dejar mi fe?</h4>
+                    <p class="faq-answer">No. Es un estudio comparativo de textos antiguos, símbolos corporales y tradiciones espirituales. No pide que abandones nada. Pide que observes con ojos nuevos. Muchos lectores católicos, evangélicos y espiritualistas lo han encontrado compatible con su fe.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">¿Funciona si no tengo la letra M?</h4>
+                    <p class="faq-answer">Sí. Muchos lectores descubren otras marcas significativas que antes ignoraban: la luna creciente, la cruz de Salomón, la línea del destino doble. El libro enseña a leer tu propio mapa espiritual, sea cual sea la marca.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">¿Y si soy escéptico? ¿Hay pruebas reales?</h4>
+                    <p class="faq-answer">Este libro no pide fe ciega. Documenta cada afirmación con fuentes: los estudios originales de Jung, los textos de la Biblia Etíope, el Libro de Enoc, tradiciones orales registradas. Léelo con ojo crítico. Juzga tú mismo.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">¿En qué formato viene? ¿Puedo leerlo en mi teléfono?</h4>
+                    <p class="faq-answer">PDF, ePub y Kindle. Léelo en cualquier teléfono, tablet o computadora. Muchos lectores lo leen de noche, en silencio, cuando el mundo duerme y el alma despierta.</p>
+                </div>
+                <div class="faq-item">
+                    <h4 class="faq-question">¿Y si no resuena conmigo? ¿Pierdo mi dinero?</h4>
+                    <p class="faq-answer">7 días de garantía. Sin preguntas. Sin letra pequeña. Si no sientes ese escalofrío de reconocimiento, si no encuentras respuestas, escríbenos y el reembolso llega el mismo día. Pero te advierto: la mayoría no pide reembolso. Piden la segunda edición.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / LAST CALL -->
+    <section class="section-dark footer-cta">
+        <div class="container">
+            <h2>Deja de sentirte perdido sin saber por qué.</h2>
+            <p>Duraste años sin respuestas. No necesitas aguantar una más. $27 una vez. Acceso instantáneo. Garantía de 7 días. La mayoría de los lectores encuentran paz en la primera noche.</p>
+            <a href="#" class="btn btn-primary btn-large">Obtener mi mapa · $27</a>
+            <div class="trust-badges" style="margin-top: 24px;">🔒 Checkout seguro · Visa · Mastercard · PayPal · Apple Pay · Reembolso 7 días</div>
+        </div>
+    </section>
+
+</body>
+</html>
